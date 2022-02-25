@@ -11,7 +11,7 @@
    <header>
        <h1 class="page-title">Taskinator</h1>
        <p>Click the button below to add a new task!</p>
-       <form id="task-form">
+       <form id="task-form" data-task-id="0">
             <div class="form-group">
                <input type="text" name="task-name" placeholder="Enter Task Name">
             </div>
@@ -27,16 +27,41 @@
                 <button class="btn" id="save-task" type="submit">Add Task</button>
             </div>
    </header>
-            <main class="page-content">
+            <main class="page-content" id="page-content">
                 <section class="task-list-wrapper">
                     <h2 class="list-title">Tasks To Do</h2>
-                    <ul class="task-list" id="tasks-to-do"></ul>
+                    <ul class="task-list" id="tasks-to-do">
+                        <li class="task-item" data-task-id="1">
+                            <div class="task-info">
+                                <h3 class="task-name">Mobile</h3>
+                                <span class="task-type">Web</span>
+                            </div>
+                            <div class="task-actions">
+                                <button class="btn edit-btn" data-task-id="1">Edit</button>
+                                <button class="btn delete-btn" data-task-id="1">Delete</button>
+                                <select name="status-change" data-task-id="1" class="select-status">
+                                    <option value="To Do">To Do</option>
+                                    <option value="In Progress">In Progress</option>
+                                    <option value="Completed">Completed</option>
+                                </select>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                </section>
+                <section class="task-list-wrapper">
+                    <h2 class="list-title">Tasks In Progress</h2>
+                    <ul class="task-list" id="tasks-in-progress"></ul>
+                </section>
+                <!--Tasks Complete-->
+                <section class="task-list-wrapper">
+                    <h2 class="list-title">Tasks Complete</h2>
+                    <ul class="task-list" id="tasks-completed"></ul>
                 </section>
             </main>
             <footer>
               &copy;2020 by Taskinator
             </footer>
         <script src="assets/js/script.js"></script>
-   
     </body>
 </html>
